@@ -1,0 +1,27 @@
+# System
+numlockx       # auto-activate numlock on boot
+
+# Dev
+git
+npm
+yarn
+
+# Utilities
+redshift       # Eye protection
+rofi
+gvim
+keepass
+timeshift      # System Backups
+variety
+feh            # For variety
+
+# Windows
+wine
+winetricks
+
+# AUR
+google-chrome
+code
+dropbox
+dynalist-desktop
+j4-make-config-git
