@@ -1,11 +1,14 @@
 #!/bin/sh
 
 declare -a files=("$HOME/.i3/config.base"
-		  "/etc/i3status.conf"
+		  "$HOME/.i3status.conf"
 		  "$HOME/.screenlayout"
 		  "$HOME/.gitconfig"
 		  "$HOME/.config/compton.conf"
 		 )
+
+rm -r ../config_files
+mkdir ../config_files
 
 for p in "${files[@]}"
 do
