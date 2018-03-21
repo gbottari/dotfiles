@@ -19,8 +19,11 @@ feh            # For variety
 wine
 winetricks
 
+# Drivers
+libva-intel-driver  # For intel graphics
+
 # AUR
-google-chrome
+chromium-vaapi-bin
 code
 dropbox
 dynalist-desktop
