@@ -1,6 +1,6 @@
 #!/bin/sh
 
-i3_file="~/.i3/config.base"
+i3_file="$HOME/.i3/config.base"
 theme_color="purple"
 old_mtime=$(date -r $i3_file)
 
