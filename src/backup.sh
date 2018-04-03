@@ -6,6 +6,8 @@ declare -a files=("$HOME/.i3/config.base"
 		  "$HOME/.gitconfig"
 		  "$HOME/.config/compton.conf"
 		  "$HOME/.Xresources"
+		  "$HOME/.yaourtrc"
+		  "$HOME/.config/mpv"
 		 )
 
 rm -r ../config_files
