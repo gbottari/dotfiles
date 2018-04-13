@@ -1,5 +1,6 @@
 # System
 numlockx       # auto-activate numlock on boot
+firefox
 
 # Dev
 git
@@ -23,8 +24,8 @@ winetricks
 libva-intel-driver  # For intel graphics
 
 # AUR
-chromium-vaapi-bin
 code
 dropbox
 dynalist-desktop
 j4-make-config-git
+franz
