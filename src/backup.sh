@@ -8,6 +8,7 @@ declare -a files=("$HOME/.i3/config.base"
 		  "$HOME/.Xresources"
 		  "$HOME/.yaourtrc"
 		  "$HOME/.config/mpv"
+		  "/etc/pacman.d/hooks"
 		 )
 
 rm -r ../config_files
