@@ -1,0 +1,58 @@
+---
+- hosts: localhost
+  vars:
+    pkgs:
+      # System
+      - numlockx       # auto-activate numlock on boot
+      - firefox
+      # Dev
+      - git
+      - npm
+      - nvm
+      - yarn
+      - mongodb
+      - mongodb-tools
+      - mariadb
+      - visual-studio-code-bin
+      - postman-bin
+      - python-conda-build
+      # Utilities
+      - redshift       # Eye protection
+      - rofi
+      - gvim
+      - keepass
+      - timeshift      # System Backups
+      - franz-bin
+      - dropbox
+      - dynalist-desktop
+      - ghetto-skype 
+      # Windows
+      - wine
+      # Drivers
+      - libva-intel-driver  # For intel graphics
+
+    autostart:
+      - firefox
+      - redshift-gtk
+      - dropbox
+      - numlockx on
+
+  tasks:
+    - name: Install Packages      
+      shell: yaourt -S {{ item }} --needed --noconfirm
+      register: yaourt_out
+      changed_when: "yaourt_out.stdout is search('resolving')"
+      with_items: "{{ pkgs }}"  
+
+    - name: Make sure mongodb is started
+      systemd: state=started enabled=yes name=mongodb
+      become: yes 
+
+      #- name: Make sure mysql is started
+      #systemd: state=started enabled=yes name=mysqld
+      #become: yes
+
+    - name: Check that conda is in bashrc
+      lineinfile:
+          path: /home/gbottari/.bashrc
+          line: ". /etc/profile.d/conda.sh"
