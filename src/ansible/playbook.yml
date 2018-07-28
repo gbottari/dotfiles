@@ -17,6 +17,7 @@
       - postman-bin
       - python-conda-build
       # Utilities
+      - geoclue2       # For redshift
       - redshift       # Eye protection
       - rofi
       - gvim
@@ -31,15 +32,16 @@
       - libva-intel-driver  # For intel graphics
 
     autostart:
-      - firefox
-      - redshift-gtk
-      - dropbox
-      - numlockx on
       - compton -b
+      - ~/.screenlayout/default.sh
+      - nitrogen --restore &
+      - numlockx on
       - nm-applet
       - volumeicon
       - xfce4-power-manager
-      - ~/.screenlayout/default.sh
+      - firefox
+      - redshift-gtk
+      - dropbox
 
   tasks:
     - name: Install Packages      
@@ -50,6 +52,10 @@
 
     - name: Start mongodb
       systemd: state=started enabled=yes name=mongodb
+      become: yes 
+
+    - name: Start geoclue 
+      systemd: state=started enabled=yes name=geoclue
       become: yes 
 
       #- name: Make sure mysql is started
