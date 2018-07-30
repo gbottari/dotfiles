@@ -16,6 +16,7 @@
       - visual-studio-code-bin
       - postman-bin
       - python-conda-build
+      - pycharm-community-edition
       # Utilities
       - redshift       # Eye protection
       - rofi
@@ -25,6 +26,9 @@
       - dropbox
       - dynalist-desktop
       - ghetto-skype 
+      - tmate
+      - xclip
+      - zip
       # Windows
       - wine
       # Drivers
