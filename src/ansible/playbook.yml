@@ -2,10 +2,7 @@
 - hosts: localhost
   vars:
     pkgs:
-      # System
-      - numlockx       # auto-activate numlock on boot
-      - firefox
-      # Dev
+    # Dev
       - git
       - npm
       - nvm
@@ -17,7 +14,9 @@
       - postman-bin
       - python-conda-build
       - pycharm-community-edition
-      # Utilities
+    # Utilities
+      - numlockx       # auto-activate numlock on boot
+      - chromium 
       - redshift       # Eye protection
       - rofi
       - gvim
@@ -29,13 +28,12 @@
       - tmate
       - xclip
       - zip
-      # Windows
       - wine
-      # Drivers
+    # Drivers:
       - libva-intel-driver  # For intel graphics
 
     autostart:
-      - firefox
+      - chromium
       - redshift-gtk
       - dropbox
       - numlockx on
