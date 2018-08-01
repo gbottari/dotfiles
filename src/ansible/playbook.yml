@@ -37,7 +37,7 @@
       - redshift-gtk
       - dropbox
       - numlockx on
-      - compton -b
+      - nitrogen --restore; sleep 1; compton -b
       - nm-applet
       - volumeicon
       - xfce4-power-manager
