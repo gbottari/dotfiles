@@ -29,6 +29,8 @@
       - xclip
       - zip
       - wine
+      - evince
+      - gthumb
     # Drivers:
       - libva-intel-driver  # For intel graphics
 
@@ -67,4 +69,10 @@
       template:
           src: templates/i3/config
           dest: ~/.i3/config
-          
+      notify: Restart i3
+
+  handlers:
+    - name: Restart i3
+      command: i3-msg restart
+      failed_when: false
+
