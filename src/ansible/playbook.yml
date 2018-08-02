@@ -1,6 +1,8 @@
 ---
 - hosts: localhost
   vars:
+    git_email: "{{ lookup('env', 'GIT_EMAIL') }}"
+
     pkgs:
     # Dev
       - git
@@ -88,6 +90,11 @@
           src: templates/i3/i3status.conf
           dest: ~/.i3/i3status.conf
       notify: Restart i3
+     
+    - name: Configure gitconfig 
+      template:
+          src: templates/gitconfig
+          dest: ~/.gitconfig
 
   handlers:
     - name: Restart i3
