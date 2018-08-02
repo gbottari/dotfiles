@@ -74,6 +74,7 @@
       lineinfile:
           path: /home/gbottari/.bashrc
           line: ". /etc/profile.d/conda.sh"
+      notify: Re-source bashrc
 
     - name: Configure i3
       template:
@@ -92,4 +93,7 @@
     - name: Restart i3
       command: i3-msg restart
       failed_when: false
+   
+    - name: Re-source bashrc
+      shell: source ~/.bashrc
 
