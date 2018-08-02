@@ -62,9 +62,13 @@
       systemd: state=started enabled=yes name=mongodb
       become: yes 
 
-      #- name: Make sure mysql is started
-      #systemd: state=started enabled=yes name=mysqld
-      #become: yes
+    - block:
+        - name: Make sure mysql is started
+          systemd: state=started enabled=yes name=mysqld
+          become: yes
+      rescue:
+        - fail: 
+            msg: "Starting mysqld failed. Try running: mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql"
 
     - name: Activate conda in bashrc
       lineinfile:
