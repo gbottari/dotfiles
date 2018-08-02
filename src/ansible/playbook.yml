@@ -75,10 +75,17 @@
           path: /home/gbottari/.bashrc
           line: ". /etc/profile.d/conda.sh"
 
-    - name: Install i3 config
+    - name: Configure i3
       template:
           src: templates/i3/config
           dest: ~/.i3/config
+      notify: Restart i3
+
+
+    - name: Configure i3status
+      template:
+          src: templates/i3/i3status.conf
+          dest: ~/.i3/i3status.conf
       notify: Restart i3
 
   handlers:
