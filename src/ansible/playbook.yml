@@ -46,11 +46,17 @@
       - ~/.screenlayout/default.sh
 
   tasks:
-    - name: Install Packages      
-      shell: yaourt -S {{ item }} --needed --noconfirm
-      register: yaourt_out
-      changed_when: "yaourt_out.stdout is search('resolving')"
-      with_items: "{{ pkgs }}"  
+    - block:
+        - name: Check Packages
+          command: "pacman -Qi {{ pkgs | join(' ')  }}"
+          no_log: true
+          changed_when: false
+      rescue:
+        - name: Install Packages      
+          shell: yaourt -S {{ item }} --needed --noconfirm
+          register: yaourt_out
+          changed_when: "yaourt_out.stdout is search('resolving')"
+          with_items: "{{ pkgs }}"  
 
     - name: Start mongodb
       systemd: state=started enabled=yes name=mongodb
