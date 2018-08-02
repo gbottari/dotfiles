@@ -1,52 +1,8 @@
 ---
 - hosts: localhost
-  vars:
-    git_email: "{{ lookup('env', 'GIT_EMAIL') }}"
-
-    pkgs:
-    # Dev
-      - git
-      - npm
-      - nvm
-      - yarn
-      - mongodb
-      - mongodb-tools
-      - mariadb
-      - visual-studio-code-bin
-      - postman-bin
-      - python-conda-build
-      - pycharm-community-edition
-    # Utilities
-      - numlockx       # auto-activate numlock on boot
-      - chromium 
-      - redshift       # Eye protection
-      - rofi
-      - gvim
-      - keepass
-      - timeshift      # System Backups
-      - dropbox
-      - dynalist-desktop
-      - ghetto-skype 
-      - tmate
-      - xclip
-      - zip
-      - wine
-      - evince
-      - gthumb
-      - xcwd-git
-    # Drivers:
-      - libva-intel-driver  # For intel graphics
-
-    autostart:
-      - chromium
-      - redshift-gtk
-      - dropbox
-      - numlockx on
-      - nitrogen --restore; sleep 1; compton -b
-      - nm-applet
-      - volumeicon
-      - xfce4-power-manager
-      - ~/.screenlayout/default.sh
+  vars_files:
+     - vars/machine_vars.yml
+     - vars/pkgs.yml
 
   tasks:
     - block:
