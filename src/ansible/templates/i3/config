@@ -27,8 +27,8 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
-
+bindsym $mod+Return exec terminal -cd "`xcwd`"
+ 
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -52,9 +52,9 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec chromium 
-bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F3 exec pcmanfm "`xcwd`"
 # bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec gksu pcmanfm
+bindsym $mod+Shift+F3 exec gksu pcmanfm "`xcwd`"
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"

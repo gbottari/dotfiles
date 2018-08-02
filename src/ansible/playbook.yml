@@ -33,6 +33,7 @@
       - wine
       - evince
       - gthumb
+      - xcwd-git
     # Drivers:
       - libva-intel-driver  # For intel graphics
 
