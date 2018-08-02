@@ -96,6 +96,11 @@
           src: templates/gitconfig
           dest: ~/.gitconfig
 
+    - name: Configure compton
+      template:
+          src: templates/compton.conf
+          dest: ~/.config/compton.conf
+
   handlers:
     - name: Restart i3
       command: i3-msg restart
