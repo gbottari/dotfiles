@@ -41,7 +41,6 @@
           dest: ~/.i3/config
       notify: Restart i3
 
-
     - name: Configure i3status
       template:
           src: templates/i3/i3status.conf
@@ -58,6 +57,12 @@
           src: templates/compton.conf
           dest: ~/.config/compton.conf
 
+    - name: Configure Xresources 
+      template:
+          src: templates/Xresources
+          dest: ~/.Xresources
+      notify: Load xrdb
+
   handlers:
     - name: Restart i3
       command: i3-msg restart
@@ -65,4 +70,7 @@
    
     - name: Re-source bashrc
       shell: source ~/.bashrc
+
+    - name: Load xrdb
+      command: xrdb -load ~/.Xresources
 
