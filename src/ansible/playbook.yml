@@ -42,7 +42,7 @@
       notify: Restart i3
 
     - name: Configure i3status
-      template:
+      copy:
           src: templates/i3/i3status.conf
           dest: ~/.i3/i3status.conf
       notify: Restart i3
@@ -53,15 +53,32 @@
           dest: ~/.gitconfig
 
     - name: Configure compton
-      template:
+      copy:
           src: templates/compton.conf
           dest: ~/.config/compton.conf
 
+    - name: Configure yaourt 
+      copy:
+          src: templates/yaourtrc
+          dest: ~/.yaourtrc
+
     - name: Configure Xresources 
-      template:
+      copy:
           src: templates/Xresources
           dest: ~/.Xresources
       notify: Load xrdb
+
+    - name: Install pacman cleanup hook
+      block:
+        - file:
+            path: /etc/pacman.d/hooks
+            state: directory
+            owner: root
+            group: root
+        - copy:
+            src: templates/pacman_cleanup.hook
+            dest: /etc/pacman.d/hooks/cleanup.hook
+      become: yes
 
   handlers:
     - name: Restart i3
