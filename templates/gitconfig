@@ -1,6 +1,6 @@
 [user]
 	name = Giulio Bottari
-	email = giuliobottari@gmail.com
+	email = {{ git_email }} 
 
 [core]
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
@@ -8,7 +8,7 @@
 	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
 	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 	editor = vim
-
+    autocrlf = input
 
 [credential]
 	# Caches passwords for 1 day

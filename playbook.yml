@@ -1,0 +1,93 @@
+---
+- hosts: localhost
+  vars_files:
+     - vars/machine_vars.yml
+     - vars/pkgs.yml
+
+  tasks:
+    - block:
+        - name: Check Packages
+          command: "pacman -Qi {{ pkgs | join(' ')  }}"
+          no_log: true
+          changed_when: false
+      rescue:
+        - name: Install Packages      
+          shell: yaourt -S {{ item }} --needed --noconfirm
+          register: yaourt_out
+          changed_when: "yaourt_out.stdout is search('resolving')"
+          with_items: "{{ pkgs }}"  
+
+    - name: Start mongodb
+      systemd: state=started enabled=yes name=mongodb
+      become: yes 
+
+    - block:
+        - name: Make sure mysql is started
+          systemd: state=started enabled=yes name=mysqld
+          become: yes
+      rescue:
+        - fail: 
+            msg: "Starting mysqld failed. Try running: mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql"
+
+    - name: Activate conda in bashrc
+      lineinfile:
+          path: /home/gbottari/.bashrc
+          line: ". /etc/profile.d/conda.sh"
+      notify: Re-source bashrc
+
+    - name: Configure i3
+      template:
+          src: templates/i3/config
+          dest: ~/.i3/config
+      notify: Restart i3
+
+    - name: Configure i3status
+      copy:
+          src: templates/i3/i3status.conf
+          dest: ~/.i3/i3status.conf
+      notify: Restart i3
+     
+    - name: Configure gitconfig 
+      template:
+          src: templates/gitconfig
+          dest: ~/.gitconfig
+
+    - name: Configure compton
+      copy:
+          src: templates/compton.conf
+          dest: ~/.config/compton.conf
+
+    - name: Configure yaourt 
+      copy:
+          src: templates/yaourtrc
+          dest: ~/.yaourtrc
+
+    - name: Configure Xresources 
+      copy:
+          src: templates/Xresources
+          dest: ~/.Xresources
+      notify: Load xrdb
+
+    - name: Install pacman cleanup hook
+      block:
+        - file:
+            path: /etc/pacman.d/hooks
+            state: directory
+            owner: root
+            group: root
+        - copy:
+            src: templates/pacman_cleanup.hook
+            dest: /etc/pacman.d/hooks/cleanup.hook
+      become: yes
+
+  handlers:
+    - name: Restart i3
+      command: i3-msg restart
+      failed_when: false
+   
+    - name: Re-source bashrc
+      shell: source ~/.bashrc
+
+    - name: Load xrdb
+      command: xrdb -load ~/.Xresources
+
