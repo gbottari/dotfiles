@@ -14,6 +14,7 @@
 # Utilities
   - numlockx       # auto-activate numlock on boot
   - chromium 
+  - geoclue2       # For redshift
   - redshift       # Eye protection
   - rofi
   - gvim
@@ -22,18 +23,19 @@
   - dropbox
   - dynalist-desktop
   - ghetto-skype 
-  - tmate
-  - xclip
+  - tmate          # SSH from anywhere
+  - xclip          # Copies from terminal to clipboard
   - zip
   - wine
-  - evince
-  - gthumb
-  - xcwd-git
+  - evince         # Decent PDF client
+  - gthumb         # Basic image browser and editor
+  - xcwd-git       # Passes current dir to commands
 # Drivers:
   - libva-intel-driver  # For intel graphics
 
 - autostart:
   - chromium
+  - /usr/lib/geoclue-2.0/demos/agent
   - redshift-gtk
   - dropbox
   - numlockx on

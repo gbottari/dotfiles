@@ -6,69 +6,75 @@
 
   tasks:
     - block:
-        - name: Check Packages
+        - name: check packages
           command: "pacman -Qi {{ pkgs | join(' ')  }}"
           no_log: true
           changed_when: false
       rescue:
-        - name: Install Packages      
+        - name: install packages      
           shell: yaourt -S {{ item }} --needed --noconfirm
           register: yaourt_out
           changed_when: "yaourt_out.stdout is search('resolving')"
           with_items: "{{ pkgs }}"  
 
-    - name: Start mongodb
+    - name: start mongodb
       systemd: state=started enabled=yes name=mongodb
       become: yes 
 
     - block:
-        - name: Make sure mysql is started
+        - name: start mysql
           systemd: state=started enabled=yes name=mysqld
           become: yes
       rescue:
         - fail: 
             msg: "Starting mysqld failed. Try running: mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql"
 
-    - name: Activate conda in bashrc
+    - name: activate conda in bashrc
       lineinfile:
           path: /home/gbottari/.bashrc
           line: ". /etc/profile.d/conda.sh"
-      notify: Re-source bashrc
+      notify: re-source bashrc
 
-    - name: Configure i3
+    - name: configure i3
       template:
           src: templates/i3/config
           dest: ~/.i3/config
-      notify: Restart i3
+      notify: restart i3
 
-    - name: Configure i3status
+    - name: configure i3status
       copy:
           src: templates/i3/i3status.conf
           dest: ~/.i3/i3status.conf
-      notify: Restart i3
+      notify: restart i3
      
-    - name: Configure gitconfig 
+    - name: configure gitconfig 
       template:
           src: templates/gitconfig
           dest: ~/.gitconfig
 
-    - name: Configure compton
+    - name: configure compton
       copy:
           src: templates/compton.conf
           dest: ~/.config/compton.conf
 
-    - name: Configure yaourt 
+    - name: configure geoclue 
+      copy:
+          src: templates/geoclue.conf
+          dest: /etc/geoclue/geoclue.conf
+      become: yes
+
+    - name: configure yaourt 
       copy:
           src: templates/yaourtrc
           dest: ~/.yaourtrc
 
-    - name: Configure Xresources 
+    - name: configure xresources 
       copy:
           src: templates/Xresources
           dest: ~/.Xresources
-      notify: Load xrdb
+      notify: load xrdb
 
-    - name: Install pacman cleanup hook
+    - name: install pacman cleanup hook
       block:
         - file:
             path: /etc/pacman.d/hooks
@@ -81,13 +87,13 @@
       become: yes
 
   handlers:
-    - name: Restart i3
+    - name: restart i3
       command: i3-msg restart
       failed_when: false
    
-    - name: Re-source bashrc
+    - name: re-source bashrc
       shell: source ~/.bashrc
 
-    - name: Load xrdb
+    - name: load xrdb
       command: xrdb -load ~/.Xresources
 
