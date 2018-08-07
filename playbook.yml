@@ -68,6 +68,10 @@
           src: templates/profile
           dest: ~/.profile
 
+    - name: start geoclue 
+      systemd: state=started enabled=yes name=geoclue
+      become: yes 
+
     - name: configure yaourt 
       copy:
           src: templates/yaourtrc
