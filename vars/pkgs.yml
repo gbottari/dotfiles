@@ -11,6 +11,7 @@
   - postman-bin
   - python-conda-build
   - pycharm-community-edition
+  - lscolors-git
 # Utilities
   - numlockx       # auto-activate numlock on boot
   - chromium 

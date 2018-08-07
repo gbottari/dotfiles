@@ -29,12 +29,6 @@
         - fail: 
             msg: "Starting mysqld failed. Try running: mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql"
 
-    - name: activate conda in bashrc
-      lineinfile:
-          path: /home/gbottari/.bashrc
-          line: ". /etc/profile.d/conda.sh"
-      notify: re-source bashrc
-
     - name: configure i3
       template:
           src: templates/i3/config
@@ -82,6 +76,18 @@
           src: templates/Xresources
           dest: ~/.Xresources
       notify: load xrdb
+
+    - name: configure inputrc 
+      copy:
+          src: templates/inputrc
+          dest: ~/.inputrc
+      notify: re-source bashrc
+
+    - name: configure bashrc 
+      copy:
+          src: templates/bashrc
+          dest: ~/.bashrc
+      notify: re-source bashrc
 
     - name: install pacman cleanup hook
       block:
