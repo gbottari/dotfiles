@@ -12,6 +12,7 @@
   - python-conda-build
   - pycharm-community-edition
   - lscolors-git
+  - robo3t-bin
 # Utilities
   - numlockx       # auto-activate numlock on boot
   - chromium 
