@@ -89,6 +89,11 @@
           dest: ~/.bashrc
       notify: re-source bashrc
 
+    - name: configure jupyter 
+      copy:
+          src: templates/jupyter/
+          dest: ~/.jupyter
+
     - name: install pacman cleanup hook
       block:
         - file:

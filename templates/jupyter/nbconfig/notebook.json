@@ -1,0 +1,33 @@
+{
+  "load_extensions": {
+    "highlight_selected_word/main": true,
+    "limit_output/main": true,
+    "notify/notify": true,
+    "ruler/main": false,
+    "select_keymap/main": false,
+    "table_beautifier/main": true,
+    "execute_time/ExecuteTime": true,
+    "export_embedded/main": true,
+    "toggle_all_line_numbers/main": true,
+    "splitcell/splitcell": false,
+    "scroll_down/main": true,
+    "toc2/main": true
+  },
+  "ExecuteTime": {
+    "display_right_aligned": true,
+    "clear_timings_on_clear_output": false,
+    "display_absolute_timings": false,
+    "highlight": {
+      "use": false
+    }
+  },
+  "highlight_selected_word": {
+    "code_cells_only": true,
+    "outlines_only": true,
+    "words_only": true
+  },
+  "toc2": {
+    "number_sections": false,
+    "toc_window_display": true
+  }
+}
