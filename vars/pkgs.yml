@@ -32,6 +32,7 @@
   - evince         # Decent PDF client
   - gthumb         # Basic image browser and editor
   - xcwd-git       # Passes current dir to commands
+  - chromium-widevine  # For Netflix
 # Drivers:
   - libva-intel-driver  # For intel graphics
 
