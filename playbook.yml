@@ -101,7 +101,7 @@
             state: directory
             owner: root
             group: root
-        - copy:
+        - template:
             src: templates/pacman_cleanup.hook
             dest: /etc/pacman.d/hooks/cleanup.hook
       become: yes

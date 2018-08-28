@@ -8,4 +8,4 @@ Target = *
 [Action]
 Description = Smart cleanup the cache.
 When = PostTransaction
-Exec = /usr/bin/paccache -rvk3
+Exec = /usr/bin/paccache -rvk{{pacman_keep_versions}}
