@@ -13,6 +13,7 @@
   - pycharm-community-edition
   - lscolors-git
   - robo3t-bin
+  - python-pip
 # Utilities
   - numlockx       # auto-activate numlock on boot
   - chromium 
