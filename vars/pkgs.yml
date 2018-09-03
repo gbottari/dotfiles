@@ -34,6 +34,7 @@
   - gthumb         # Basic image browser and editor
   - xcwd-git       # Passes current dir to commands
   - chromium-widevine  # For Netflix
+  - autorandr
 # Drivers:
   - libva-intel-driver  # For intel graphics
 
