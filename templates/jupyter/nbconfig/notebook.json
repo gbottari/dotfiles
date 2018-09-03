@@ -1,7 +1,7 @@
 {
   "load_extensions": {
     "highlight_selected_word/main": true,
-    "limit_output/main": true,
+    "limit_output/main": false,
     "notify/notify": true,
     "ruler/main": false,
     "select_keymap/main": false,
@@ -11,7 +11,11 @@
     "toggle_all_line_numbers/main": true,
     "splitcell/splitcell": false,
     "scroll_down/main": true,
-    "toc2/main": true
+    "toc2/main": true,
+    "plotlywidget/extension": true,
+    "jupyter-js-widgets/extension": true,
+    "nbextensions_configurator/config_menu/main": true,
+    "contrib_nbextensions_help_item/main": true
   },
   "ExecuteTime": {
     "display_right_aligned": true,
@@ -29,5 +33,6 @@
   "toc2": {
     "number_sections": false,
     "toc_window_display": true
-  }
+  },
+  "scrollDownIsEnabled": true
 }
