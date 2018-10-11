@@ -50,7 +50,6 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 ################################################################################################
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec chromium 
 bindsym $mod+F3 exec pcmanfm "`xcwd`"
 # bindsym $mod+F3 exec ranger
@@ -62,7 +61,6 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 focus_follows_mouse no
@@ -144,6 +142,16 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
+
+# Splitting workspaces automatically
+workspace $ws1 output eDP1
+workspace $ws2 output HDMI1
+workspace $ws3 output eDP1
+workspace $ws4 output HDMI1
+workspace $ws5 output eDP1
+workspace $ws6 output HDMI1
+workspace $ws7 output eDP1
+workspace $ws8 output HDMI1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
