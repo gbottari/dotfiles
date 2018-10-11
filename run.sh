@@ -6,4 +6,4 @@ ln -s `hostname`.yml machine_vars.yml
 cd ..
 
 ansible-galaxy install -r requirements.yml
-ansible-playbook playbook.yml -K
+ansible-playbook playbook.yml -K "$@"
