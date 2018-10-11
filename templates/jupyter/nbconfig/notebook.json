@@ -15,7 +15,8 @@
     "plotlywidget/extension": true,
     "jupyter-js-widgets/extension": true,
     "nbextensions_configurator/config_menu/main": true,
-    "contrib_nbextensions_help_item/main": true
+    "contrib_nbextensions_help_item/main": true,
+    "livemdpreview/livemdpreview": true
   },
   "ExecuteTime": {
     "display_right_aligned": true,
