@@ -106,11 +106,6 @@
             dest: /etc/pacman.d/hooks/cleanup.hook
       become: yes
     
-    - name: install elasticbeanstalk cli
-      pip:
-          name: awsebcli
-          extra_args: --user
-
   handlers:
     - name: restart i3
       command: i3-msg restart
