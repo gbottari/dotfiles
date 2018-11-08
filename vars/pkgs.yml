@@ -4,16 +4,14 @@
   - npm
   - nvm
   - yarn
-  - mongodb
-  - mongodb-tools
-  - mariadb
   - visual-studio-code-bin
   - postman-bin
   - python-conda-build
   - pycharm-community-edition
   - lscolors-git
   - robo3t-bin
-  - python-pip
+  - docker
+  - docker-compose
 # Utilities
   - numlockx       # auto-activate numlock on boot
   - chromium 

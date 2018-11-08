@@ -17,18 +17,6 @@
           changed_when: "yaourt_out.stdout is search('resolving')"
           with_items: "{{ pkgs }}"  
 
-    - name: start mongodb
-      systemd: state=started enabled=yes name=mongodb
-      become: yes 
-
-    - block:
-        - name: start mysql
-          systemd: state=started enabled=yes name=mysqld
-          become: yes
-      rescue:
-        - fail: 
-            msg: "Starting mysqld failed. Try running: mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql"
-
     - name: configure i3
       template:
           src: templates/i3/config
