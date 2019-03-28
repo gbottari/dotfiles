@@ -50,7 +50,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 ################################################################################################
 
 # Start Applications
-bindsym $mod+F2 exec chromium 
+bindsym $mod+F2 exec brave 
 bindsym $mod+F3 exec pcmanfm "`xcwd`"
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu pcmanfm "`xcwd`"
@@ -275,6 +275,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id {{ browser  }}
 {% for item in autostart %}
 exec --no-startup-id {{ item }}
 {% endfor %}

@@ -7,7 +7,7 @@
   tasks:
     - block:
         - name: check packages
-          command: "pacman -Qi {{ pkgs | join(' ')  }}"
+          command: "pacman -Qi {{ ( pkgs + machine_pkgs ) | join(' ')  }}"
           no_log: true
           changed_when: false
       rescue:
@@ -15,7 +15,7 @@
           shell: yaourt -S {{ item }} --needed --noconfirm
           register: yaourt_out
           changed_when: "yaourt_out.stdout is search('resolving')"
-          with_items: "{{ pkgs }}"  
+          with_items: "{{pkgs + machine_pkgs}}"  
 
     - name: configure i3
       template:
@@ -38,6 +38,11 @@
       copy:
           src: templates/compton.conf
           dest: ~/.config/compton.conf
+
+    - name: configure rofi 
+      copy:
+          src: templates/rofi_config
+          dest: ~/.config/rofi/config
 
     - name: configure geoclue 
       copy:

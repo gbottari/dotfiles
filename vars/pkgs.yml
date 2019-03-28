@@ -22,8 +22,6 @@
   - keepass
   - timeshift      # System Backups
   - dropbox
-  - dynalist-desktop
-  - ghetto-skype 
   - tmate          # SSH from anywhere
   - xclip          # Copies from terminal to clipboard
   - zip
@@ -37,7 +35,6 @@
   - libva-intel-driver  # For intel graphics
 
 - autostart:
-  - chromium
   - /usr/lib/geoclue-2.0/demos/agent
   - redshift-gtk
   - dropbox

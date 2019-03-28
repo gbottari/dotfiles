@@ -1,2 +1,5 @@
 - git_email: giuliobottari@gmail.com
 - pacman_keep_versions: 3
+- browser: brave
+- machine_pkgs: [ brave ]
+
