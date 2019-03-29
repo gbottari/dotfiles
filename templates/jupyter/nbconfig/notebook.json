@@ -1,6 +1,6 @@
 {
   "load_extensions": {
-    "highlight_selected_word/main": true,
+    "highlight_selected_word/main": false,
     "limit_output/main": false,
     "notify/notify": true,
     "ruler/main": false,
@@ -16,7 +16,8 @@
     "jupyter-js-widgets/extension": true,
     "nbextensions_configurator/config_menu/main": true,
     "contrib_nbextensions_help_item/main": true,
-    "livemdpreview/livemdpreview": true
+    "livemdpreview/livemdpreview": true,
+    "vim_binding/vim_binding": false
   },
   "ExecuteTime": {
     "display_right_aligned": true,
