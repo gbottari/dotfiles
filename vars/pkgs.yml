@@ -30,6 +30,7 @@
   - gthumb         # Basic image browser and editor
   - xcwd-git       # Passes current dir to commands
   - chromium-widevine  # For Netflix
+  - noto-fonts-emoji  # Correctly displays emojis on chromium
   - autorandr
 # Drivers:
   - libva-intel-driver  # For intel graphics
