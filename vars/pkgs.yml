@@ -32,6 +32,7 @@
   - chromium-widevine  # For Netflix
   - noto-fonts-emoji  # Correctly displays emojis on chromium
   - autorandr
+  - bash-completion
 # Drivers:
   - libva-intel-driver  # For intel graphics
 
