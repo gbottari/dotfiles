@@ -16,7 +16,7 @@
   - numlockx       # auto-activate numlock on boot
   - chromium 
   - geoclue2       # For redshift
-  - redshift       # Eye protection
+  - clight 
   - rofi
   - gvim
   - keepass
@@ -46,4 +46,4 @@
   - volumeicon
   - xfce4-power-manager
   - ~/.screenlayout/default.sh
-
+  - clight

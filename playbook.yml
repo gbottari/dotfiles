@@ -50,6 +50,11 @@
           dest: /etc/geoclue/geoclue.conf
       become: yes
 
+    - name: configure clight 
+      copy:
+          src: templates/clight.conf
+          dest: ~/.config/clight.conf 
+
     - name: configure profile 
       copy:
           src: templates/profile
@@ -57,6 +62,10 @@
 
     - name: start geoclue 
       systemd: state=started enabled=yes name=geoclue
+      become: yes 
+
+    - name: start clight 
+      systemd: state=started enabled=yes name=clightd
       become: yes 
 
     - name: configure yaourt 
