@@ -2,43 +2,42 @@
 # Dev
   - git
   - npm
-  - nvm
+  - nvm                         # Node Version Manager
   - yarn
   - visual-studio-code-bin
   - postman-bin
   - python-conda-build
   - pycharm-community-edition
-  - lscolors-git
-  - robo3t-bin
+  - lscolors-git                # setup nice LS_COLORS for the terminal
+  - robo3t-bin                  # MongoDB visual client
   - docker
   - docker-compose
 # Utilities
-  - numlockx       # auto-activate numlock on boot
+  - numlockx                    # auto-activate numlock on boot
   - chromium 
-  - geoclue2       # For redshift
-  - clight 
-  - rofi
+  - geoclue2                    # gets approximate GPS coords
+  - clight                      # calibrates brightness and color temperature automatically
+  - rofi                        # command launcher
   - gvim
-  - keepass
-  - timeshift      # System Backups
+  - keepass                     # password manager
+  - timeshift                   # system backup manager
   - dropbox
-  - tmate          # SSH from anywhere
-  - xclip          # Copies from terminal to clipboard
+  - tmate                       # SSH from anywhere
+  - xclip                       # copies from terminal to clipboard
   - zip
   - wine
-  - evince         # Decent PDF client
-  - gthumb         # Basic image browser and editor
-  - xcwd-git       # Passes current dir to commands
-  - chromium-widevine  # For Netflix
-  - noto-fonts-emoji  # Correctly displays emojis on chromium
-  - autorandr
+  - evince                      # decent PDF client
+  - gthumb                      # basic image browser and editor
+  - xcwd-git                    # passes current dir to commands
+  - chromium-widevine           # required to make Netflix work on chromium
+  - noto-fonts-emoji            # correctly displays emojis on chromium
+  - autorandr                   # automatically duplicates/replicates when HDMI is connected
   - bash-completion
 # Drivers:
-  - libva-intel-driver  # For intel graphics
+  - libva-intel-driver          # hardware acceleration for videos on intel graphics
 
 - autostart:
   - /usr/lib/geoclue-2.0/demos/agent
-  - redshift-gtk
   - dropbox
   - numlockx on
   - nitrogen --restore; sleep 1; compton -b
