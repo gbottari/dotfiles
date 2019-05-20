@@ -16,7 +16,7 @@
   - numlockx                    # auto-activate numlock on boot
   - chromium 
   - geoclue2                    # gets approximate GPS coords
-  - clight                      # calibrates brightness and color temperature automatically
+  - redshift                    # set color temperature automatically
   - rofi                        # command launcher
   - gvim
   - keepass                     # password manager
@@ -45,4 +45,4 @@
   - volumeicon
   - xfce4-power-manager
   - ~/.screenlayout/default.sh
-  - clight
+  - redshift-gtk
