@@ -50,11 +50,6 @@
           dest: /etc/geoclue/geoclue.conf
       become: yes
 
-    - name: configure clight 
-      copy:
-          src: templates/clight.conf
-          dest: ~/.config/clight.conf 
-
     - name: configure profile 
       copy:
           src: templates/profile
