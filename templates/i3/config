@@ -33,7 +33,9 @@ bindsym $mod+Return exec terminal -cd "`xcwd`"
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id "rofi -show run -terminal $TERM -theme glue_pro_blue"
+
+bindsym $mod+Tab exec --no-startup-id "rofi -show window -show-icons -theme glue_pro_blue"
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
