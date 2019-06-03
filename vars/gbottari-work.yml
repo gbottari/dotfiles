@@ -1,5 +1,4 @@
 - git_email: giulio.bottari@tvglobo.com.br
-- pacman_keep_versions: 1
 - browser: chromium
 - machine_pkgs: []
 

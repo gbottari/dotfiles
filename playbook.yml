@@ -99,7 +99,7 @@
             owner: root
             group: root
         - name: copy pacman hooks config
-          template:
+          copy:
             src: templates/pacman_cleanup.hook
             dest: /etc/pacman.d/hooks/cleanup.hook
       become: yes

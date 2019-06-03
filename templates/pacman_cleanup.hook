@@ -6,6 +6,6 @@ Type = Package
 Target = *
 
 [Action]
-Description = Smart cleanup the cache.
+Description = Pacman cache cleanup.
 When = PostTransaction
-Exec = /usr/bin/paccache -rvk{{pacman_keep_versions}}
+Exec = paccache -rvk1
