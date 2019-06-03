@@ -51,7 +51,7 @@
       become: yes
 
     - name: configure profile 
-      copy:
+      template:
           src: templates/profile
           dest: ~/.profile
 
