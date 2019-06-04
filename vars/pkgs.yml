@@ -14,7 +14,7 @@
   - docker-compose
 # Utilities
   - numlockx                    # auto-activate numlock on boot
-  - chromium 
+  - chromium-vaapi-bin          # chromium with hw decoding support 
   - geoclue2                    # gets approximate GPS coords
   - redshift                    # set color temperature automatically
   - rofi                        # command launcher
