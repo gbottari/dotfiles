@@ -86,6 +86,12 @@
           dest: ~/.bashrc
       notify: re-source bashrc
 
+    - name: configure bashrc for root 
+      copy:
+          src: templates/bashrc
+          dest: /root/.bashrc
+      become: yes
+
     - name: configure jupyter 
       copy:
           src: templates/jupyter/
