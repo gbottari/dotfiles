@@ -34,10 +34,16 @@
           src: templates/gitconfig
           dest: ~/.gitconfig
 
-    - name: configure compton
+    - name: configure vim 
       copy:
-          src: templates/compton.conf
-          dest: ~/.config/compton.conf
+          src: templates/vimrc
+          dest: ~/.vimrc
+
+    - name: configure vim for root 
+      copy:
+          src: templates/vimrc
+          dest: /root/.vimrc
+      become: yes
 
     - name: configure rofi 
       copy:
