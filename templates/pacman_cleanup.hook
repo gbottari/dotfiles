@@ -8,4 +8,4 @@ Target = *
 [Action]
 Description = Pacman cache cleanup.
 When = PostTransaction
-Exec = paccache -rvk1
+Exec = /usr/bin/paccache -rvk1
