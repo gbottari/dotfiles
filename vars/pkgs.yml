@@ -19,6 +19,7 @@
   - redshift                    # set color temperature automatically
   - rofi                        # command launcher
   - gvim
+  - vim-plug
   - keepass                     # password manager
   - timeshift                   # system backup manager
   - dropbox
