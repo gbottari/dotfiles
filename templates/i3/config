@@ -285,7 +285,6 @@ exec --no-startup-id pacman-mirrors --fasttrack
 
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 # Color palette used for the terminal ( ~/.Xresources file )
