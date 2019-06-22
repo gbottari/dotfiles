@@ -181,6 +181,7 @@ export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
 INPUTRC=~/.inputrc
 
 # Conda activate
+export CONDA_EXE=/usr/bin/conda
 . /etc/profile.d/conda.sh
 
 # Colors files by extension
