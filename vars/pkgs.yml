@@ -1,6 +1,7 @@
 - pkgs:
 # Dev
   - git
+  - git-lfs
   - npm
   - nvm                         # Node Version Manager
   - yarn
