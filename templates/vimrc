@@ -34,6 +34,10 @@ Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
+" Copy with ctrl+c and paste with ctrl+v
+vnoremap <C-c> "+y
+map <C-p> "+p
+
 " Relative numbers to make movements easier
 set number relativenumber
 
