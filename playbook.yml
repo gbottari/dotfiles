@@ -23,10 +23,10 @@
           dest: ~/.i3/config
       notify: restart i3
 
-    - name: configure i3status
+    - name: configure polybar 
       copy:
-          src: templates/i3/i3status.conf
-          dest: ~/.i3/i3status.conf
+          src: templates/polybar
+          dest: ~/.config/polybar
       notify: restart i3
      
     - name: configure gitconfig 

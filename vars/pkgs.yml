@@ -35,6 +35,7 @@
   - noto-fonts-emoji            # correctly displays emojis on chromium
   - autorandr                   # automatically duplicates/replicates when HDMI is connected
   - bash-completion
+  - polybar
 # Drivers:
   - libva-intel-driver          # hardware acceleration for videos on intel graphics
 
