@@ -189,3 +189,6 @@ export CONDA_EXE=/usr/bin/conda
 
 # Initialize NVM
 source /usr/share/nvm/init-nvm.sh
+
+# Style new terminals with wal
+cat ~/.cache/wal/sequences
