@@ -36,6 +36,7 @@
   - autorandr                   # automatically duplicates/replicates when HDMI is connected
   - bash-completion
   - polybar
+  - python-pywal                # theme generator based on wallpaper
 # Drivers:
   - libva-intel-driver          # hardware acceleration for videos on intel graphics
 

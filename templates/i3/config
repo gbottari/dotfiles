@@ -285,6 +285,7 @@ exec --no-startup-id {{ item }}
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 exec_always --no-startup-id fix_xcursor
+exec_always --no-startup-id wal -R
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
