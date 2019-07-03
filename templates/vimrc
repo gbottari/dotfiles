@@ -1,42 +1,24 @@
-colorscheme industry
-
 call plug#begin('~/.vim/plugged')
 
+" A sensible set of defaults for vim
 Plug 'tpope/vim-sensible'
 
 " A tree explorer plugin for vim
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" Colors {{{
-Plug 'dolio/vim-hybrid'
-Plug 'morhetz/gruvbox'
-Plug 'chriskempson/base16-vim'
-" }}}
-
-" Group dependencies, vim-snippets depends on ultisnips
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-" On-demand loading
-" Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-" Using git URL
-" Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" Plugin options
-" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-" Plugin outside ~/.vim/plugged with post-update hook
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-
-" Unmanaged plugin (manually installed and updated)
-" Plug '~/my-prototype-plugin'
+" Colorscheme based on pywal
+Plug 'dylanaraps/wal.vim'
 
 call plug#end()
 
-" Copy with ctrl+c and paste with ctrl+v
-vnoremap <C-c> "+y
-map <C-p> "+p
+colorscheme wal
+
+" Toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" Copy with ctrl+c and paste with ctrl+p
+vnoremap <C-c> "*y :let @+=@*<CR>
+map <C-p> "+P
 
 " Relative numbers to make movements easier
 set number relativenumber
