@@ -9,6 +9,8 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Colorscheme based on pywal
 Plug 'dylanaraps/wal.vim'
 
+Plug 'takac/vim-hardtime'
+
 call plug#end()
 
 colorscheme wal
@@ -28,4 +30,7 @@ set wildmode=longest,list,full
 
 " Splits open at the bottom and right
 set splitbelow splitright
+
+let g:hardtime_default_on = 1
+let g:list_of_disabled_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 
