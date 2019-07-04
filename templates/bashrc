@@ -116,6 +116,8 @@ unset safe_term match_lhs sh
 
 # Aliases
 alias cp="cp -i"                          # confirm before overwriting something
+alias mv="mv -i"                          # confirm before overwriting something
+alias rm="rm -I"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias more=less
