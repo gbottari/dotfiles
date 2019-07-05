@@ -1,4 +1,4 @@
-#
+
 # ~/.bashrc
 #
 
@@ -79,20 +79,9 @@ set_prompt()
    local txtpurple='\[$(tput setaf 5)\]'
    local txtcyan='\[$(tput setaf 6)\]'
    local txtwhite='\[$(tput setaf 7)\]'
-   # unicode "✗"
-   local fancyx='\342\234\227'
-   # unicode "✓"
-   local checkmark='\342\234\223'
-
-   # a red "✗" or a green "✓" and the error number
-   if [[ $last_cmd == 0 ]]; then
-      PS1="$txtgreen$checkmark" 
-   else
-      PS1="$txtred$fancyx $txtwhite($last_cmd)"
-   fi
 
    # date
-   PS1+=" $txtblue[\D{%H:%M:%S}]"
+   PS1="$txtblue[\D{%H:%M:%S}]"
 
    # User color: red for root, yellow for others
    if [[ $EUID == 0 ]]; then
