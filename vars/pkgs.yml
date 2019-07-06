@@ -10,6 +10,7 @@
   - python-conda-build
   - pycharm-community-edition
   - lscolors-git                # setup nice LS_COLORS for the terminal
+  - nerd-fonts-terminus
   - robo3t-bin                  # MongoDB visual client
   - docker
   - docker-compose
