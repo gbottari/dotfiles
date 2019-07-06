@@ -29,6 +29,11 @@
           dest: ~/.config
       notify: restart i3
      
+    - name: configure autorandr 
+      copy:
+          src: templates/postswitch
+          dest: ~/.config/autorandr
+     
     - name: configure gitconfig 
       template:
           src: templates/gitconfig
