@@ -6,14 +6,17 @@ Plug 'tpope/vim-sensible'
 " A tree explorer plugin for vim
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
-" Colorscheme based on pywal
-Plug 'dylanaraps/wal.vim'
-
 Plug 'takac/vim-hardtime'
+
+" Plug 'posva/vim-vue', { 'for': 'vue' }
+Plug  'leafOfTree/vim-vue-plugin'
+
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-colorscheme wal
+colorscheme gruvbox
+set background=dark
 
 " Toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -33,4 +36,4 @@ set splitbelow splitright
 
 let g:hardtime_default_on = 1
 let g:list_of_disabled_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-
+let g:vim_vue_plugin_load_full_syntax = 1
