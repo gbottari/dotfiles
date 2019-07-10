@@ -39,6 +39,16 @@
           src: templates/gitconfig
           dest: ~/.gitconfig
 
+    - name: configure gtk2 
+      copy:
+          src: templates/gtkrc-2.0 
+          dest: ~/.gtkrc-2.0 
+
+    - name: configure gtk3 
+      copy:
+          src: templates/gtk-3.0 
+          dest: ~/.config 
+
     - name: configure vim 
       copy:
           src: templates/vimrc
