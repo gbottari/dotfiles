@@ -33,6 +33,7 @@
       copy:
           src: templates/postswitch
           dest: ~/.config/autorandr
+          mode: '0751'
      
     - name: configure gitconfig 
       template:
