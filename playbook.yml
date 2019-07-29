@@ -50,6 +50,11 @@
           src: templates/gtk-3.0 
           dest: ~/.config 
 
+    - name: configure xmodmap 
+      copy:
+          src: templates/Xmodmap
+          dest: ~/.Xmodmap
+     
     - name: configure vim 
       copy:
           src: templates/vimrc
