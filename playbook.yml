@@ -119,6 +119,12 @@
           dest: /root/.bashrc
       become: yes
 
+    - name: configure pacman
+      copy:
+          src: templates/pacman.conf
+          dest: /etc/pacman.conf
+      become: yes
+
     - name: configure jupyter 
       copy:
           src: templates/jupyter/
