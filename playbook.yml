@@ -35,6 +35,11 @@
           dest: ~/.config/autorandr
           mode: '0751'
      
+    - name: configure vscode 
+      copy:
+          src: templates/code_settings.json
+          dest: ~/.config/Code/User/settings.json
+     
     - name: configure gitconfig 
       template:
           src: templates/gitconfig
