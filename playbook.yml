@@ -66,6 +66,11 @@
           dest: /root/.vimrc
       become: yes
 
+    - name: configure ranger
+      copy:
+          src: templates/ranger
+          dest: ~/.config
+
     - name: configure rofi 
       copy:
           src: templates/rofi_config
