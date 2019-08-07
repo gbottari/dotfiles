@@ -1,5 +1,7 @@
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-export BROWSER=chromium
+export BROWSER={{ browser }}
 export EDITOR=/usr/bin/vim
 export PATH="$PATH:/home/gbottari/scripts:/home/gbottari/.local/bin:/home/gbottari/.gem/ruby/2.6.0/bin"
+
+setxkbmap -option caps:swapescape
