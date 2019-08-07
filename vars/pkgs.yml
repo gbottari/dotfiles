@@ -29,7 +29,8 @@
   - xclip                       # copies from terminal to clipboard
   - zip
   - wine
-  - evince                      # decent PDF client
+  - zathura                     # pdf viewer with vi keybindings
+  - zathura-pdf-mupdf
   - gthumb                      # basic image browser and editor
   - xcwd-git                    # passes current dir to commands
   - chromium-widevine           # required to make Netflix work on chromium
