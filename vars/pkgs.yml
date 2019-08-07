@@ -32,6 +32,7 @@
   - zathura                     # pdf viewer with vi keybindings
   - zathura-pdf-mupdf
   - gthumb                      # basic image browser and editor
+  - w3m                         # needed for ranger image preview
   - xcwd-git                    # passes current dir to commands
   - chromium-widevine           # required to make Netflix work on chromium
   - noto-fonts-emoji            # correctly displays emojis on chromium
