@@ -1,3 +1,4 @@
 #!/bin/sh
 
 $HOME/.config/polybar/launch.sh
+$HOME/scripts/swap_escape.sh

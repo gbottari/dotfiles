@@ -1,4 +1,4 @@
----
+
 - hosts: localhost
   vars_files:
      - vars/machine_vars.yml
@@ -70,6 +70,12 @@
       copy:
           src: templates/ranger
           dest: ~/.config
+
+    - name: configure ufw 
+      copy:
+          src: templates/ufw_user.rules
+          dest: /etc/ufw/user.rules
+      become: yes
 
     - name: configure rofi 
       copy:
@@ -166,6 +172,11 @@
             state: link
             mode: u+rwx,g-wx,o-wx
           when: not ynab_stat.stat.exists
+          
+    - name: copy scripts
+      copy:
+          src: ./scripts
+          dest: ~/scripts
     
   handlers:
     - name: restart i3
