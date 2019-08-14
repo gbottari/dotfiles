@@ -6,12 +6,20 @@ Plug 'tpope/vim-sensible'
 " A tree explorer plugin for vim
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
+" To train vim best practices
 Plug 'takac/vim-hardtime'
 
-" Plug 'posva/vim-vue', { 'for': 'vue' }
-Plug  'leafOfTree/vim-vue-plugin'
+" Vue support
+Plug  'leafOfTree/vim-vue-plugin', { 'for': 'vue' }
 
+" For nice colors
 Plug 'morhetz/gruvbox'
+
+" Surround text easily
+Plug 'tpope/vim-surround'
+
+" Allows repeating plugin comands
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 
