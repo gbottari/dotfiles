@@ -13,3 +13,8 @@
 [credential]
 	# Caches passwords for 1 day
 	helper = cache --timeout=86400
+
+[alias]
+	s = "!stage() { git add `git status -su | grep '^ M' | awk '{print $2}' | rofi -dmenu -multi-select`; }; stage"
+	u = "!unstage() { git add `git status -su | grep '^M' | awk '{print $2}' | rofi -dmenu -multi-select`; }; unstage"
+
