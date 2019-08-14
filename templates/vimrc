@@ -21,6 +21,11 @@ Plug 'tpope/vim-surround'
 " Allows repeating plugin comands
 Plug 'tpope/vim-repeat'
 
+" Git plugin
+Plug 'tpope/vim-fugitive'
+
+Plug 'tell-k/vim-autopep8'
+
 call plug#end()
 
 colorscheme gruvbox
@@ -45,3 +50,6 @@ set splitbelow splitright
 let g:hardtime_default_on = 1
 let g:list_of_disabled_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:vim_vue_plugin_load_full_syntax = 1
+
+let g:autopep8_on_save = 1
+let g:autopep8_disable_show_diff = 1
