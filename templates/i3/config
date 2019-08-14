@@ -35,6 +35,13 @@ bindsym $mod+Tab exec --no-startup-id "rofi -show window -show-icons"
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
+# vim scratchpad window
+exec --no-startup-id urxvt -name vimwin -e vim /tmp/vimwin
+exec --no-startup-id "echo '/tmp/vimwin' | entr -s 'cat /tmp/vimwin | xclip -selection clipboard'"
+for_window [instance="vimwin"] floating enable
+for_window [instance="vimwin"] move scratchpad
+bindsym $mod+v [instance="vimwin"] scratchpad show
+
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
@@ -67,27 +74,13 @@ bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
 
-# alternatively, you can use the cursor keys:
-# bindsym $mod+Left focus left
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
-# bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
-# alternatively, you can use the cursor keys:
-# bindsym $mod+Shift+Left move left
-# bindsym $mod+Shift+Down move down
-# bindsym $mod+Shift+Up move up
-# bindsym $mod+Shift+Right move right
-
 # split orientation
-# bindsym $mod+b split h;exec notify-send 'tile horizontally'
-# bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -215,14 +208,10 @@ mode "$mode_system" {
 bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym $down resize shrink width 5 px or 5 ppt
-        bindsym $up resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym $left resize grow width 5 px or 5 ppt
+        bindsym $left resize shrink width 5 px or 5 ppt
+        bindsym $down resize grow height 5 px or 5 ppt
+        bindsym $up resize shrink height 5 px or 5 ppt
+        bindsym $right resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
