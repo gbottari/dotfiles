@@ -154,25 +154,6 @@
             dest: /etc/pacman.d/hooks/cleanup.hook
       become: yes
 
-    - block:
-        - name: check if YNAB 4 is installed
-          stat:
-            path: ~/scripts/run_ynab4.sh
-          register: ynab_stat
-        - name: copy run script to ~/scripts
-          copy:
-            src: scripts/run_ynab4.sh
-            dest: ~/scripts/run_ynab4.sh
-            mode: u+rwx,g-wx,o-wx
-          when: not ynab_stat.stat.exists
-        - name: create symlink
-          file:
-            src: ~/scripts/run_ynab4.sh
-            dest:  ~/scripts/ynab
-            state: link
-            mode: u+rwx,g-wx,o-wx
-          when: not ynab_stat.stat.exists
-          
     - name: copy scripts
       copy:
           src: ./scripts
