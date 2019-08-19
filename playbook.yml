@@ -176,7 +176,7 @@
     - name: copy scripts
       copy:
           src: ./scripts
-          dest: ~/scripts
+          dest: "~/"
     
   handlers:
     - name: restart i3
