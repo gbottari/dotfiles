@@ -24,9 +24,6 @@ Plug 'tpope/vim-repeat'
 " Git plugin
 Plug 'tpope/vim-fugitive'
 
-" Autoformat code with PEP 8
-Plug 'tell-k/vim-autopep8'
-
 " Python syntax
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
@@ -36,11 +33,7 @@ colorscheme gruvbox
 set background=dark
 
 " Toggle NERDTree
-map <C-n> :NERDTreeToggle<CR>
-
-" Copy with ctrl+c and paste with ctrl+p
-vnoremap <C-c> "*y :let @+=@*<CR>
-map <C-p> "+P
+map <C-N> :NERDTreeToggle<CR>
 
 " Relative numbers to make movements easier
 set number relativenumber
@@ -55,17 +48,17 @@ let g:hardtime_default_on = 1
 let g:list_of_disabled_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 let g:vim_vue_plugin_load_full_syntax = 1
 
-let g:autopep8_on_save = 1
-let g:autopep8_disable_show_diff = 1
-
 let g:pymode_indent = 1
 let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
 let g:pymode_syntax_all = 1
 let g:pymode_lint_ignore = ["E501", "E722"]
-
+"
 " Window split shortcuts
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Auto-lint on every save
+au BufWritePost *.py PymodeLintAuto
