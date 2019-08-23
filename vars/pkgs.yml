@@ -42,6 +42,7 @@
   - python-pywal                # theme generator based on wallpaper
   - sxiv                        # image viewer with vi keybindings
   - entr
+  - tldr                        # man with real-world examples
 # Drivers:
   - libva-intel-driver          # hardware acceleration for videos on intel graphics
 
