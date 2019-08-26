@@ -1,4 +1,5 @@
 #!/bin/sh
 
 $HOME/.config/polybar/launch.sh
+sleep 3s
 $HOME/scripts/swap_escape.sh
