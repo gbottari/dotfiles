@@ -115,6 +115,7 @@ alias grep="grep --colour=auto"
 alias egrep="egrep --colour=auto"                                                   	
 alias fgrep="fgrep --colour=auto"                                                   	
 alias ip="ip -c"
+alias ncdur="ncdu / --exclude=/home --exclude=/mnt --exclude=/proc --exclude=/dev"
 
 # Git aliases
 alias gc="git commit"
