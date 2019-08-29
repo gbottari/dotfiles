@@ -1,0 +1,47 @@
+# Dev
+git
+git-lfs
+npm
+Node Version Manager
+yarn
+visual-studio-code-bin
+postman-bin
+python-conda-build
+pycharm-community-edition
+lscolors-git                # setup nice LS_COLORS for the terminal
+nerd-fonts-terminus
+robo3t-bin                  # MongoDB visual client
+docker
+docker-compose
+
+# Utilities
+numlockx                    # auto-activate numlock on boot
+vaapi-bin                   # chromium with hw decoding support 
+geoclue2                    # gets approximate GPS coords
+redshift                    # set color temperature automatically
+rofi                        # command launcher
+gvim
+vim-plug
+keepass                     # password manager
+timeshift                   # system backup manager
+dropbox
+tmate                       # SSH from anywhere
+xclip                       # copies from terminal to clipboard
+zip
+wine
+zathura                     # pdf viewer with vi keybindings
+zathura-pdf-mupdf
+gthumb                      # basic image browser and editor
+w3m                         # needed for ranger image preview
+xcwd-git                    # passes current dir to commands
+chromium-widevine           # required to make Netflix work on chromium
+noto-fonts-emoji            # correctly displays emojis on chromium
+autorandr                   # automatically duplicates/replicates when HDMI is connected
+bash-completion
+polybar
+python-pywal                # theme generator based on wallpaper
+sxiv                        # image viewer with vi keybindings
+entr
+
+# Drivers:
+libva-intel-driver          # hardware acceleration for videos on intel graphics
