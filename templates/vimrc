@@ -33,6 +33,9 @@ Plug 'easymotion/vim-easymotion'
 " File finder
 Plug 'kien/ctrlp.vim'
 
+" Statusline
+Plug 'itchyny/lightline.vim'
+
 call plug#end()
 
 colorscheme gruvbox
