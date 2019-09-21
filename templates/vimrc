@@ -36,6 +36,9 @@ Plug 'kien/ctrlp.vim'
 " Statusline
 Plug 'itchyny/lightline.vim'
 
+" Auto Pairs
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
 colorscheme gruvbox
