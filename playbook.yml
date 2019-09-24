@@ -102,10 +102,6 @@
       systemd: state=started enabled=yes name=geoclue
       become: yes 
 
-    - name: start clight 
-      systemd: state=started enabled=yes name=clightd
-      become: yes 
-
     - name: configure yaourt 
       copy:
           src: templates/yaourtrc
