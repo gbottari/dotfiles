@@ -17,6 +17,11 @@
           changed_when: "yaourt_out.stdout is search('resolving')"
           with_items: "{{pkgs + machine_pkgs}}"  
 
+    - name: configure zsh
+      template:
+          src: templates/zshrc
+          dest: ~/.zshrc
+
     - name: configure i3
       template:
           src: templates/i3/config

@@ -1,5 +1,8 @@
 - pkgs:
 # Dev
+  - zsh
+  - zplug                       # plugin manager for zsh
+  - oh-my-zsh-git
   - git
   - git-lfs
   - npm

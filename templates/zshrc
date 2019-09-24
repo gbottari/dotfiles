@@ -1,0 +1,109 @@
+source /usr/share/zsh/scripts/zplug/init.zsh                                                      
+
+zstyle :compinstall filename '/home/gbottari/.zshrc'
+
+# Enable colors
+autoload -U colors && colors
+
+# Aliases
+source ~/.aliasrc
+
+# History
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Autocompletion
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+# vi mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+
+# Keybindings
+bindkey '^e' edit-command-line    
+bindkey '^N' autosuggest-fetch
+bindkey '^ ' autosuggest-accept
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# Colors for man pages.
+export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
+export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
+
+# Better yaourt colors
+YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
+
+# Colors files by extension
+. /usr/share/LS_COLORS/dircolors.sh
+
+# Fixes occasional bugs with home and end keys.
+INPUTRC=~/.inputrc
+
+# Conda activate
+export CONDA_EXE=/usr/bin/conda
+. /etc/profile.d/conda.sh
+
+# Initialize NVM
+source /usr/share/nvm/init-nvm.sh
+
+# Style new terminals with wal
+cat ~/.cache/wal/sequences
+
+# oh-my-zsh stuff
+ZSH=/usr/share/oh-my-zsh/
+
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+# Theme
+zplug "themes/nanotech", from:oh-my-zsh, as:theme
+
+# oh-my-zsh's git plugin
+zplug "plugins/git", from:oh-my-zsh
+
+# Helps remembering aliases
+zplug "djui/alias-tips"
+
+# must be loaded after executing compinit command and sourcing other plugins
+# (If the defer tag is given 2 or above, run after compinit command)
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+zplug "zsh-users/zsh-autosuggestions"
+export _ZSH_AUTOSUGGEST_DISABLED=1
+
+zplug load
