@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# General aliases
+alias cp="cp -i"                          # confirm before overwriting something
+alias mv="mv -i"                          # confirm before overwriting something
+alias rm="rm -I"                          # confirm before overwriting something
+alias df="df -h"                          # human-readable sizes
+alias free="free -m"                      # show sizes in MB
+alias more=less
+alias ls="ls --color=auto --group-directories-first"
+alias grep="grep --colour=auto"                                                     	
+alias egrep="egrep --colour=auto"                                                   	
+alias fgrep="fgrep --colour=auto"                                                   	
+alias ip="ip -c"
+
+# Git aliases
+alias gc="git commit"
+alias gs="git status"
+alias gd="git diff"

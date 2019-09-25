@@ -22,6 +22,11 @@
           src: templates/zshrc
           dest: ~/.zshrc
 
+    - name: configure aliasrc
+      template:
+          src: templates/aliasrc
+          dest: ~/.aliasrc
+
     - name: configure i3
       template:
           src: templates/i3/config
