@@ -28,9 +28,10 @@ export KEYTIMEOUT=1
 autoload edit-command-line; zle -N edit-command-line
 
 # Keybindings
-bindkey '^e' edit-command-line    
+bindkey '^E' edit-command-line    
 bindkey '^N' autosuggest-fetch
 bindkey '^ ' autosuggest-accept
+bindkey '^R' history-incremental-search-backward
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
